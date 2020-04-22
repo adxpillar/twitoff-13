@@ -28,6 +28,8 @@ share/python-wheels/
 MANIFEST
 migrations/
 *.db
+.vscode
+.env
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
