@@ -33,6 +33,6 @@ if __name__ == "__main__":
     print(list(embeddings)) # [[0.8556405305862427, ...], ...]
 
     print("------------")
-    sentence = "I love #ArtificialIntelligence"
-    sent_embeddings = connection.embed_sentence(sentence)
+    tweet_text = "I love #ArtificialIntelligence"
+    sent_embeddings = connection.embed_sentence(tweet_text, model="twitter")
     print(list(sent_embeddings))
