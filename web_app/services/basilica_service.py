@@ -34,5 +34,5 @@ if __name__ == "__main__":
 
     print("------------")
     tweet_text = "I love #ArtificialIntelligence"
-    sent_embeddings = connection.embed_sentence(tweet_text, model="twitter")
+    sent_embeddings = connection.embed_sentence(tweet_text, )
     print(list(sent_embeddings))
