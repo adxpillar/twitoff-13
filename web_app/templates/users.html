@@ -1,0 +1,21 @@
+<!-- web_app/templates/user.html -->
+
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+    <h1>My Users Page</h1>
+
+    {% if users %}
+        <ul>
+        {% for user in users %}
+            <li>{{ user.screen_name }}</li>
+        {% endfor %}
+        </ul>
+
+    {% else %}
+        <p>No users in the database, please add some.</p>
+    {% endif %}
+
+{% endblock %}

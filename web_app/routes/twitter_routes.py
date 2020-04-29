@@ -63,3 +63,20 @@ def get_user(screen_name=None):
 
 
 
+@twitter_routes.route("/users")
+def list_users_human_friendly():
+    db_users = User.query.all()
+    users_response = parse_records(db_users)
+    return render_template("users.html", users=db_users) # list twitter users in DB 
+
+@twitter_routes.route("/users.json")
+def list_users():
+    db_users = User.query.all()
+    users_response = parse_records(db_users)
+    return jsonify(users_response)
+
+@twitter_routes.route("/users/<screen_name>")
+def get_a_user(screen_name=None):
+    print(screen_name)
+    db_user = User.query.filter(User.screen_name == screen_name).one()
+    return render_template("user.html", user=db_user, tweets = db_user.tweets) # user + tweets
